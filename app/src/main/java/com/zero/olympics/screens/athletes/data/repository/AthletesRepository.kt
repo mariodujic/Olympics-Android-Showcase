@@ -19,4 +19,8 @@ class AthletesRepository @Inject constructor(
     suspend fun getGameAthletes(gameId: Int): Result<List<AthleteNetwork>> {
         return networkResponseMapper { api.getGameAthletes(gameId) }
     }
+
+    suspend fun getAthlete(athleteId: String): Result<AthleteNetwork> {
+        return networkResponseMapper { api.getAthlete(athleteId) }
+    }
 }

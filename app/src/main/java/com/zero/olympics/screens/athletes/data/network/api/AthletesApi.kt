@@ -13,4 +13,7 @@ interface AthletesApi {
 
     @GET("/games/{gameId}/athletes")
     suspend fun getGameAthletes(@Path("gameId") gameId: Int): Response<List<AthleteNetwork>>
+
+    @GET("/athletes/{athleteId}")
+    suspend fun getAthlete(@Path("athleteId") athleteId: String): Response<AthleteNetwork>
 }

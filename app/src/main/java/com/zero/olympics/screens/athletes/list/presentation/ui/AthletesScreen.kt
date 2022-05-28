@@ -1,8 +1,7 @@
-package com.zero.olympics.screens.athletes.presentation.ui
+package com.zero.olympics.screens.athletes.list.presentation.ui
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -16,11 +15,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.zero.olympics.R
 import com.zero.olympics.data.network.result.Result
-import com.zero.olympics.screens.athletes.presentation.viewmodel.AthletesViewModel
-import com.zero.olympics.screens.common.ui.mediumPadding
+import com.zero.olympics.screens.athletes.list.presentation.viewmodel.AthletesViewModel
 
 @Composable
-fun AthletesScreen() {
+fun AthletesScreen(navigateDetails: (String) -> Unit) {
 
     val viewModel: AthletesViewModel = hiltViewModel()
     val gamesResult by viewModel.games.collectAsState()
@@ -38,7 +36,10 @@ fun AthletesScreen() {
                 Result.Empty -> Text(text = stringResource(id = R.string.athletes_screen_empty))
                 is Result.Error -> Text(text = stringResource(id = R.string.athletes_screen_error))
                 Result.Loading -> CircularProgressIndicator()
-                is Result.Success -> AthletesSuccessScreen(gameAthletes = result.value)
+                is Result.Success -> AthletesSuccessScreen(
+                    gameAthletes = result.value,
+                    navigateDetails = navigateDetails
+                )
             }
         }
     }

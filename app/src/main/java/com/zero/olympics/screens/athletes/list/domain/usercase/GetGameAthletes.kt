@@ -1,4 +1,4 @@
-package com.zero.olympics.screens.athletes.domain.usercase
+package com.zero.olympics.screens.athletes.list.domain.usercase
 
 import com.zero.olympics.data.network.result.Result
 import com.zero.olympics.screens.athletes.data.repository.AthletesRepository

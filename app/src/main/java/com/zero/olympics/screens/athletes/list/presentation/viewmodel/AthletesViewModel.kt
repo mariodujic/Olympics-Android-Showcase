@@ -1,10 +1,10 @@
-package com.zero.olympics.screens.athletes.presentation.viewmodel
+package com.zero.olympics.screens.athletes.list.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.zero.olympics.data.network.result.Result
 import com.zero.olympics.screens.athletes.domain.model.GameAthletes
-import com.zero.olympics.screens.athletes.domain.usercase.GetGameAthletes
+import com.zero.olympics.screens.athletes.list.domain.usercase.GetGameAthletes
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

@@ -3,4 +3,11 @@
     <string name="athletes_top_bar_title">Olympic Athletes</string>
     <string name="athletes_screen_empty">No games found.</string>
     <string name="athletes_screen_error">Error retrieving data, try again later.</string>
+    <string name="navigate_back_button_content_description">Navigate back</string>
+    <string name="athlete_screen_error">Unable to retrieve athlete details.</string>
+    <string name="bio_label">Bio</string>
+    <string name="height_label">Height:</string>
+    <string name="weight_label">Weight:</string>
+    <string name="dob_label">DOB:</string>
+    <string name="name_label">Name:</string>
 </resources>
