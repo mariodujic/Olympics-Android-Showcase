@@ -12,7 +12,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    private const val BASE_URL = "https://test-ocs.herokuapp.com/"
+    const val BASE_URL = "https://test-ocs.herokuapp.com/"
 
     @Provides
     @Singleton

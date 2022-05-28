@@ -67,4 +67,6 @@ dependencies {
     /*Network*/
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    /*Image*/
+    implementation "io.coil-kt:coil-compose:$coil_version"
 }

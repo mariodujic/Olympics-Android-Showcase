@@ -1,9 +1,12 @@
 package com.zero.olympics.screens.athletes.presentation.ui
 
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -28,33 +31,14 @@ fun AthletesScreen() {
         })
     }) {
         Box(
-            modifier = Modifier
-                .padding(mediumPadding)
-                .fillMaxSize(),
+            modifier = Modifier.fillMaxSize(),
             contentAlignment = Alignment.Center
         ) {
             when (val result = gamesResult) {
-                Result.Empty -> Text(text = "No games found.")
-                is Result.Error -> Text(text = "Error retrieving data, try again later.")
+                Result.Empty -> Text(text = stringResource(id = R.string.athletes_screen_empty))
+                is Result.Error -> Text(text = stringResource(id = R.string.athletes_screen_error))
                 Result.Loading -> CircularProgressIndicator()
-                is Result.Success -> {
-                    LazyColumn(modifier = Modifier.fillMaxSize()) {
-                        items(result.value) {
-                            Row(
-                                horizontalArrangement = Arrangement.SpaceBetween,
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                it.city?.let { city ->
-                                    Text(text = city, style = MaterialTheme.typography.h5)
-                                    Text(
-                                        text = it.year.toString(),
-                                        style = MaterialTheme.typography.h5
-                                    )
-                                }
-                            }
-                        }
-                    }
-                }
+                is Result.Success -> AthletesSuccessScreen(gameAthletes = result.value)
             }
         }
     }
