@@ -1,6 +1,6 @@
-package com.zero.olympics.features.athletes.data.network.api
+package com.zero.olympics.screens.athletes.data.network.api
 
-import com.zero.olympics.features.athletes.data.network.model.Game
+import com.zero.olympics.screens.athletes.data.network.model.Game
 import retrofit2.Response
 import retrofit2.http.GET
 

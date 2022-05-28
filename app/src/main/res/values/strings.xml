@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Olympic Athletes</string>
+    <string name="athletes_top_bar_title">Olympic Athletes</string>
 </resources>

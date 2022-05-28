@@ -1,4 +1,4 @@
-package com.zero.olympics.features.navigation
+package com.zero.olympics.navigation
 
 sealed class Navigation(val route: String)
 object Splash : Navigation("splash")

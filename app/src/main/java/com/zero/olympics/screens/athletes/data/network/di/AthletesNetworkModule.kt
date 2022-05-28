@@ -1,6 +1,6 @@
-package com.zero.olympics.features.athletes.data.network.di
+package com.zero.olympics.screens.athletes.data.network.di
 
-import com.zero.olympics.features.athletes.data.network.api.AthletesApi
+import com.zero.olympics.screens.athletes.data.network.api.AthletesApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

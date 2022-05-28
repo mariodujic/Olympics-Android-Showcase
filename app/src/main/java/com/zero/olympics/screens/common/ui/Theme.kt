@@ -1,4 +1,4 @@
-package com.zero.olympics.features.common.ui
+package com.zero.olympics.screens.common.ui
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
@@ -7,14 +7,14 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 
 private val DarkColorPalette = darkColors(
-    primary = DeepBlue,
+    primary = Blue,
     secondary = OrangeYellow1,
-    surface = DeepBlue
+    surface = Blue
 )
 
 private val LightColorPalette = lightColors(
-    primary = LightGreen2,
-    primaryVariant = BlueViolet3,
+    primary = Blue,
+    primaryVariant = White,
     secondary = LightGreen2
 )
 

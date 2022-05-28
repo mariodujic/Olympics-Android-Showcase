@@ -1,11 +1,10 @@
-package com.zero.olympics.features.common.ui
+package com.zero.olympics.screens.common.ui
 
 import androidx.compose.ui.graphics.Color
 
-val TextWhite = Color(0xffeeeeee)
-val DeepBlue = Color(0xff06164c)
-val Blue = Color(0xff505cf3)
-val DarkerBlue = Color(0xff566894)
+val White = Color(0xffeeeeee)
+val Blue = Color(0xFF2196F3)
+val DarkerBlue = Color(0xFF05599C)
 val LightRed = Color(0xfffc879a)
 val AquaBlue = Color(0xff9aa5c4)
 val OrangeYellow1 = Color(0xfff0bd28)

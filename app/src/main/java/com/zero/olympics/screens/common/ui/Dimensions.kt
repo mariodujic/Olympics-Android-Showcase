@@ -1,4 +1,4 @@
-package com.zero.olympics.features.common.ui
+package com.zero.olympics.screens.common.ui
 
 import androidx.compose.ui.unit.dp
 

@@ -1,0 +1,3 @@
+<resources>
+    <integer name="splash_screen_length_ms">1000</integer>
+</resources>

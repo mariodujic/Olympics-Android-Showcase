@@ -10,9 +10,11 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.zero.olympics.features.athletes.presentation.ui.AthletesScreen
-import com.zero.olympics.features.common.ui.OlympicsTheme
-import com.zero.olympics.features.navigation.Athletes
+import com.zero.olympics.navigation.Athletes
+import com.zero.olympics.navigation.Splash
+import com.zero.olympics.screens.athletes.presentation.ui.AthletesScreen
+import com.zero.olympics.screens.common.ui.OlympicsTheme
+import com.zero.olympics.screens.splash.presentation.ui.SplashScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,7 +28,13 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     val navController = rememberNavController()
-                    NavHost(navController = navController, startDestination = Athletes.route) {
+                    NavHost(navController = navController, startDestination = Splash.route) {
+                        composable(Splash.route) {
+                            SplashScreen {
+                                navController.popBackStack()
+                                navController.navigate(Athletes.route)
+                            }
+                        }
                         composable(Athletes.route) {
                             AthletesScreen()
                         }
