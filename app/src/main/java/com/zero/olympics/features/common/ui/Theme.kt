@@ -1,4 +1,4 @@
-package com.zero.olympics.ui.theme
+package com.zero.olympics.features.common.ui
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

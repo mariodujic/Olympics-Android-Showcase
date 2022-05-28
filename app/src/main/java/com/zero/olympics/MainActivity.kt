@@ -6,12 +6,16 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.zero.olympics.ui.theme.OlympicsTheme
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.zero.olympics.features.athletes.presentation.ui.AthletesScreen
+import com.zero.olympics.features.common.ui.OlympicsTheme
+import com.zero.olympics.features.navigation.Athletes
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +25,12 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
+                    val navController = rememberNavController()
+                    NavHost(navController = navController, startDestination = Athletes.route) {
+                        composable(Athletes.route) {
+                            AthletesScreen()
+                        }
+                    }
                 }
             }
         }

@@ -1,5 +1,8 @@
 buildscript {
     apply from: 'versions.gradle'
+    dependencies {
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+    }
 }
 plugins {
     id 'com.android.application' version "$gradle_plugin_version" apply false
