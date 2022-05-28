@@ -1,0 +1,16 @@
+ext {
+    compile_sdk = 32
+    target_sdk = 32
+    min_sdk = 21
+
+    version_code = 1
+    version_name = "1.0"
+
+    kotlin_version = '1.6.10'
+    compose_version = '1.1.1'
+    lifecycle_runtime_version = '2.4.1'
+    activity_compose_version = '1.4.0'
+    junit_version = '4.13.2'
+    core_ktx_version = '1.7.0'
+    gradle_plugin_version = '7.2.1'
+}
