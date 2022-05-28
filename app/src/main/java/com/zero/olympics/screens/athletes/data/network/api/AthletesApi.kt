@@ -1,6 +1,7 @@
 package com.zero.olympics.screens.athletes.data.network.api
 
 import com.zero.olympics.screens.athletes.data.network.model.AthleteNetwork
+import com.zero.olympics.screens.athletes.data.network.model.AthleteResultNetwork
 import com.zero.olympics.screens.athletes.data.network.model.GameNetwork
 import retrofit2.Response
 import retrofit2.http.GET
@@ -16,4 +17,7 @@ interface AthletesApi {
 
     @GET("/athletes/{athleteId}")
     suspend fun getAthlete(@Path("athleteId") athleteId: String): Response<AthleteNetwork>
+
+    @GET("/athletes/{athleteId}/results")
+    suspend fun getAthleteResults(@Path("athleteId") athleteId: String): Response<List<AthleteResultNetwork>>
 }

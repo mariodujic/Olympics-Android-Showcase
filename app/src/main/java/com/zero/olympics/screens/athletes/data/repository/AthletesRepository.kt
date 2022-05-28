@@ -4,7 +4,9 @@ import com.zero.olympics.data.network.mapper.NetworkResponseMapper
 import com.zero.olympics.data.network.result.Result
 import com.zero.olympics.screens.athletes.data.network.api.AthletesApi
 import com.zero.olympics.screens.athletes.data.network.model.AthleteNetwork
+import com.zero.olympics.screens.athletes.data.network.model.AthleteResultNetwork
 import com.zero.olympics.screens.athletes.data.network.model.GameNetwork
+import com.zero.olympics.screens.athletes.domain.model.AthleteResult
 import javax.inject.Inject
 
 class AthletesRepository @Inject constructor(
@@ -22,5 +24,9 @@ class AthletesRepository @Inject constructor(
 
     suspend fun getAthlete(athleteId: String): Result<AthleteNetwork> {
         return networkResponseMapper { api.getAthlete(athleteId) }
+    }
+
+    suspend fun getAthleteResults(athleteId: String): Result<List<AthleteResultNetwork>> {
+        return networkResponseMapper { api.getAthleteResults(athleteId) }
     }
 }

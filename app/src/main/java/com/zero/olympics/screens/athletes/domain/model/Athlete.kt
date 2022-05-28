@@ -8,5 +8,6 @@ data class Athlete(
     val bio: String,
     val weight: Int? = null,
     val height: Int? = null,
-    val photoUrl: String? = null
+    val photoUrl: String? = null,
+    val results: List<AthleteResult> = emptyList()
 )

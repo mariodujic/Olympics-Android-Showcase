@@ -13,11 +13,13 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import coil.compose.SubcomposeAsyncImage
 import com.halilibo.richtext.markdown.Markdown
 import com.halilibo.richtext.ui.RichText
 import com.zero.olympics.R
 import com.zero.olympics.screens.athletes.domain.model.Athlete
+import com.zero.olympics.screens.common.image.AppImage
 import com.zero.olympics.screens.common.ui.mediumPadding
 import com.zero.olympics.screens.common.ui.smallPadding
 import com.zero.olympics.screens.common.ui.smallerPadding
@@ -81,6 +83,50 @@ fun AthleteDetailsSuccessScreen(athlete: Athlete) {
                         fontWeight = FontWeight.Bold
                     )
                     Text(text = "${athlete.height}cm")
+                }
+            }
+        }
+        Text(
+            text = stringResource(id = R.string.medals_label),
+            style = MaterialTheme.typography.h5,
+            modifier = Modifier.padding(horizontal = smallPadding)
+        )
+        Column(
+            verticalArrangement = Arrangement.spacedBy(smallerPadding),
+            modifier = Modifier.padding(vertical = smallPadding)
+        ) {
+            athlete.results.forEach {
+                Row(
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = smallPadding)
+                ) {
+                    Text(text = it.city, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                    Row(horizontalArrangement = Arrangement.spacedBy(smallerPadding)) {
+                        if (it.gold > 0) {
+                            Text(text = it.gold.toString())
+                            AppImage(
+                                drawableId = R.drawable.ic_gold,
+                                modifier = Modifier.size(25.dp)
+                            )
+                        }
+                        if (it.silver > 0) {
+                            Text(text = it.silver.toString())
+                            AppImage(
+                                drawableId = R.drawable.ic_silver,
+                                modifier = Modifier.size(25.dp)
+                            )
+                        }
+                        if (it.bronze > 0) {
+                            Text(text = it.bronze.toString())
+                            AppImage(
+                                drawableId = R.drawable.ic_bronze,
+                                modifier = Modifier.size(25.dp)
+                            )
+                        }
+                    }
                 }
             }
         }
