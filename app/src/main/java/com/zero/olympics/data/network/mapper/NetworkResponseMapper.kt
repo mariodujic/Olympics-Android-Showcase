@@ -6,11 +6,14 @@ import javax.inject.Inject
 
 class NetworkResponseMapper @Inject constructor() {
 
-    suspend operator fun <C> invoke(response: suspend () -> Response<C>): Result<C> = try {
+    suspend operator fun <T, C> invoke(
+        response: suspend () -> Response<T>,
+        successDataMapper: (T) -> C = { it -> it as C }
+    ): Result<C> = try {
         response().let {
             if (it.isSuccessful) {
                 it.body()?.let { body ->
-                    Result.Success(body as C)
+                    Result.Success(successDataMapper(body))
                 } ?: Result.Empty
             } else {
                 Result.Error(it.code())
