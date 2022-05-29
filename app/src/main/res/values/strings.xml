@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Olympic Athletes</string>
     <string name="athletes_top_bar_title">Olympic Athletes</string>
+    <string name="athlete_details_top_bar_title">%s details</string>
     <string name="athletes_screen_empty">No games found.</string>
     <string name="athletes_screen_error">Error retrieving data, try again later.</string>
     <string name="navigate_back_button_content_description">Navigate back</string>

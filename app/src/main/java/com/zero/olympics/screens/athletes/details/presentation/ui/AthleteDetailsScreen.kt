@@ -25,7 +25,17 @@ fun AthleteDetailsScreen(navigateBack: () -> Unit) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = stringResource(id = R.string.athletes_top_bar_title)) },
+                title = {
+                    Text(
+                        text = when (val result = athleteResult) {
+                            is Result.Success -> stringResource(
+                                id = R.string.athlete_details_top_bar_title,
+                                "${result.value.name} ${result.value.surname}"
+                            )
+                            else -> ""
+                        }
+                    )
+                },
                 navigationIcon = {
                     IconButton(onClick = { navigateBack() }) {
                         Icon(
