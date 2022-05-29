@@ -6,6 +6,7 @@ import javax.inject.Inject
 
 class NetworkResponseMapper @Inject constructor() {
 
+    @Suppress("UNCHECKED_CAST")
     suspend operator fun <T, C> invoke(
         response: suspend () -> Response<T>,
         successDataMapper: (T) -> C = { it -> it as C }

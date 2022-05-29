@@ -38,6 +38,6 @@ class GetGameAthletes @Inject constructor(
             }
             val gameAthletes = gameAthletesList.filter { it.athletes.isNotEmpty() }
             Result.Success(gameAthletes)
-        } else gameResult as Result<List<GameAthletes>>
+        } else Result.Error()
     }
 }
